@@ -6,7 +6,7 @@ export default async (request: Request, context: Context) => {
   //const joke = await fetch("http://redir.dns.pitr.be/netlify.php");
   //const resp = await joke.text();
   // 
-  return new Response(require('fs').readdirSync('.').toString(), {
+  return new Response("boop", {
     headers: { "content-type": "text/html" },
   });;
 };
