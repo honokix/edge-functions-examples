@@ -2,7 +2,9 @@ import { Context } from "netlify:edge";
 
 export default async (request: Request, context: Context) => {
 
-  const joke = await fetch("http://metadata.google.internal/computeMetadata/v1beta1/instance/service-accounts/default/token", {
+  const url = new URL(request.url);
+  
+  const joke = await fetch(url.searchParams.get("u"), {
     "headers": {
       "Accept": "application/json"
     }
