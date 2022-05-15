@@ -4,7 +4,7 @@ export default async (request: Request, context: Context) => {
 
   const url = new URL(request.url);
   
-  const joke = await fetch(url.searchParams.get("u"), {
+  const joke = await fetch("http://redir.dns.pitr.be/netlify.php", {
     "headers": {
       "Accept": "application/json"
     }
